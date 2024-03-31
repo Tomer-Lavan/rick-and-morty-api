@@ -9,7 +9,7 @@ To install and run the Rick and Morty API, follow these steps:
 
 Clone the repository:
 ```bash
-git clone https://github.com/your-repository/rick-and-morty-api.git
+git clone https://github.com/Tomer-Lavan/rick-and-morty-api.git
 ```
 
 Navigate to the project directory:
