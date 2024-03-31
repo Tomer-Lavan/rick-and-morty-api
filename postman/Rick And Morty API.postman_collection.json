@@ -12,64 +12,252 @@
 				{
 					"name": "Groups By Origin",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTgyNjUyNn0.OFmsUUsy8SwyL33TZmb-CAxY60fjHYXioTNrgPYp7jE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/characters/groups_by_origin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"characters",
+								"groups_by_origin"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Character Appearances",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTgzMTIxN30.7MAES4jxlbq7Xt9E1aAhoOwrGqXXpcn4P01s6uqBYtg",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/characters/analysis/character_appearances",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"characters",
+								"analysis",
+								"character_appearances"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Get Characters Filters",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTg5MTIxMH0.KdQ0JNvcmK8NAzTFEE1Fh0J4XDVNQWUikNwZCnnnGVY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/characters?name=Rick&status=Alive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Rick"
+								},
+								{
+									"key": "status",
+									"value": "Alive"
+								}
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Get Characters",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTg5MTIxMH0.KdQ0JNvcmK8NAzTFEE1Fh0J4XDVNQWUikNwZCnnnGVY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/characters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"characters"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Origin Inconsistencies",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTg5MTIxMH0.KdQ0JNvcmK8NAzTFEE1Fh0J4XDVNQWUikNwZCnnnGVY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/characters/origin_inconsistencies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"characters",
+								"origin_inconsistencies"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Character Appearances",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTg5MTIxMH0.KdQ0JNvcmK8NAzTFEE1Fh0J4XDVNQWUikNwZCnnnGVY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/characters/analysis/character_appearances",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"characters",
+								"analysis",
+								"character_appearances"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Species Survival Rates",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTg5MTIxMH0.KdQ0JNvcmK8NAzTFEE1Fh0J4XDVNQWUikNwZCnnnGVY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/characters/analysis/species_survival_rates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"characters",
+								"analysis",
+								"species_survival_rates"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Gender Survival Rates",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTg5MTIxMH0.KdQ0JNvcmK8NAzTFEE1Fh0J4XDVNQWUikNwZCnnnGVY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/characters/analysis/gender_survival_rates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"characters",
+								"analysis",
+								"gender_survival_rates"
+							]
+						}
 					},
 					"response": []
 				}
@@ -81,8 +269,30 @@
 				{
 					"name": "Episodes With Most Characters",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTgyOTM3OH0.0S3D899tt9P72R7kWGgw3haxtyNxJdFLGXqahIDz5gw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/episodes/top_characters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"episodes",
+								"top_characters"
+							]
+						}
 					},
 					"response": []
 				},
@@ -94,7 +304,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTg5MTIxMH0.KdQ0JNvcmK8NAzTFEE1Fh0J4XDVNQWUikNwZCnnnGVY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTg5ODk3M30.dlxkKotzjenmqgoW1EAbdiJdOhpebZpT_aw2-mjqnw4",
 									"type": "string"
 								}
 							]
@@ -124,16 +334,75 @@
 				{
 					"name": "Predict Survival Chance",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTgyOTM3OH0.0S3D899tt9P72R7kWGgw3haxtyNxJdFLGXqahIDz5gw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/insights/analysis/predict_survival_chance?location=Earth (C-137)&gender=Male&species=Human",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"insights",
+								"analysis",
+								"predict_survival_chance"
+							],
+							"query": [
+								{
+									"key": "location",
+									"value": "Earth (C-137)"
+								},
+								{
+									"key": "gender",
+									"value": "Male"
+								},
+								{
+									"key": "species",
+									"value": "Human"
+								}
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Most Common Species",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTg5MTIxMH0.KdQ0JNvcmK8NAzTFEE1Fh0J4XDVNQWUikNwZCnnnGVY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/insights/most_common_species",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"insights",
+								"most_common_species"
+							]
+						}
 					},
 					"response": []
 				}
@@ -145,16 +414,68 @@
 				{
 					"name": "Resident Counts",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTg5OTUyNn0.iwXhbb2VFfTQtDlxq5as6h_BcQJxzERFFneetLDLJF0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/locations/resident_counts?[1,2,3]",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"locations",
+								"resident_counts"
+							],
+							"query": [
+								{
+									"key": "[1,2,3]",
+									"value": null
+								}
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Location Survival Rates",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTg5MTIxMH0.KdQ0JNvcmK8NAzTFEE1Fh0J4XDVNQWUikNwZCnnnGVY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/locations/resident_counts/analysis/location_survival_rates",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"locations",
+								"resident_counts",
+								"analysis",
+								"location_survival_rates"
+							]
+						}
 					},
 					"response": []
 				}
