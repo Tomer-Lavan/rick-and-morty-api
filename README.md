@@ -23,10 +23,10 @@ pip install -r requirements.txt
 
 Run the API server:
 ```bash
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
-The API server will start running on http://127.0.0.1:8000.
+The API server will start running on http://localhost:8000.
 
 ## Endpoints
 
@@ -71,3 +71,11 @@ Run the testing command:
 ```bash
 pytest tests/
 ```
+
+## Future Improvments
+- Improve Caching: Use a cache system like redis and add other services to the cache.
+- Add Other Sources: Use api's such IMDB and Rottem Tomatos to get more data such episodes raitings to robust insghts endpoints.
+- Improve Sutrvival Prediction: Use machine learning/satistical models to get more accurate weights to location, gender and species.
+- Optimise Performence: In some endpoints that are getting top k of a metric we can use a heap to make the function more efficient.
+                        Due to the nature of the api data is limited I decided that currently it is unnecessary.
+- Improve Testing: Currently most of the testing are straight forward and do not cover all cases.

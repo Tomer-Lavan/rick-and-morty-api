@@ -9,6 +9,17 @@ router = APIRouter()
 
 @router.post("/login")
 def login(form_data: OAuth2PasswordRequestForm = Depends()):
+    """
+    Authenticates a user based on username and password.
+    Args:
+        form_data (OAuth2PasswordRequestForm): Form data containing username and password.
+    Returns:
+        dict: Access token and token type if authentication is successful.
+    Raises:
+        HTTPException: If username or password is incorrect.
+    """
+
+    # Currently Retrieve the user from a mock database
     user = mock_users_db.get(form_data.username)
     if not user or user.get("password") != form_data.password:
         raise HTTPException(

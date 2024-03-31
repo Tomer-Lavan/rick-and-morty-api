@@ -50,16 +50,6 @@ class Episode(BaseModel):
     created: str
 
 
-class Location(BaseModel):
-    id: int
-    name: str
-    type: str
-    dimension: str
-    residents: List[str]
-    url: str
-    created: str
-
-
 class SurvivalRate(BaseModel):
     survival_rate: float
     total_characters: int
@@ -70,32 +60,6 @@ class SurvivalPrediction(BaseModel):
     gender: str
     species: str
     predicted_survival_chance: float
-
-
-class AtypicalEpisode(BaseModel):
-    id: int
-    name: str
-    novel_pairings: int
-
-
-class GroupedCharacters(BaseModel):
-    origin: str
-    characters: List[Character]
-
-
-class CharacterAppearance(BaseModel):
-    name: str
-    appearances: int
-
-
-class TopEpisode(BaseModel):
-    count: int
-    episode: Episode
-
-
-class User:
-    def __init__(self, username: str):
-        self.username = username
 
 
 mock_users_db = {

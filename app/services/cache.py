@@ -2,6 +2,10 @@ from typing import Any, Dict
 
 
 class Cache:
+    """
+    A Singelton simple cache class for the api. 
+    Currently support only the rick and morty api service but can be extended to other services.
+    """
     _instance = None
 
     def __new__(cls):

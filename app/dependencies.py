@@ -6,6 +6,16 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 
 def get_current_user(token: str = Depends(oauth2_scheme)):
+    """
+    Retrieves the current user based on the provided token.
+    Currently use mock DB.
+    Args:
+        token (str): The authentication token.
+    Returns:
+        str: The username of the current user.
+    Raises:
+        HTTPException: If the token is invalid or verification fails.
+    """
     payload = verify_token(token)
     if not payload:
         raise HTTPException(

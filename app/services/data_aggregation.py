@@ -7,6 +7,13 @@ from app.models import CharacterFilter, Character, SurvivalRate, Episode
 
 
 def most_common_species(characters: List[Character]) -> List[Tuple[str, int]]:
+    """
+    Finds the most common species among the characters.
+    Args:
+        characters (List[Character]): List of character objects.
+    Returns:
+        List[Tuple[str, int]]: List of tuples containing species names and their counts.
+    """
     species_count = {}
     for character in characters:
         species = character["species"]
@@ -21,6 +28,13 @@ def most_common_species(characters: List[Character]) -> List[Tuple[str, int]]:
 
 
 def group_characters_by_origin(characters: List[Character]) -> Dict[str, SurvivalRate]:
+    """
+    Groups characters by their origin.
+    Args:
+        characters (List[Character]): List of character objects.
+    Returns:
+        Dict[str, List[Character]]: Dictionary with origins as keys and lists of characters as values.
+    """
     origin_groups = {}
 
     for char in characters:
@@ -35,6 +49,13 @@ def group_characters_by_origin(characters: List[Character]) -> Dict[str, Surviva
 
 
 def analyze_charcters_apearences(characters: List[Character]) -> List[Character]:
+    """
+    Analyzes the number of appearances of each character.
+    Args:
+        characters (List[Character]): List of character objects.
+    Returns:
+        List[Character]: List of characters sorted by their number of appearances.
+    """
     character_appearances = {}
     for character in characters:
         for episode_url in character['episode']:
@@ -53,6 +74,13 @@ def analyze_charcters_apearences(characters: List[Character]) -> List[Character]
 
 
 def analyze_location_survival_rate(characters: List[Character]) -> Dict[str, SurvivalRate]:
+    """
+    Analyzes the survival rate of characters based on their location.
+    Args:
+        characters (List[Character]): List of character objects.
+    Returns:
+        Dict[str, SurvivalRate]: Dictionary with locations as keys and survival rates as values.
+    """
     location_info = {}
 
     for char in characters:
@@ -79,6 +107,13 @@ def analyze_location_survival_rate(characters: List[Character]) -> Dict[str, Sur
 
 
 def analyze_gender_survival_rates(characters: List[Character]) -> Dict[str, Dict[str, SurvivalRate]]:
+    """
+    Analyzes the survival rate of characters based on their gender.
+    Args:
+        characters (List[Character]): List of character objects.
+    Returns:
+        Dict[str, SurvivalRate]: Dictionary with genders as keys and survival rates as values.
+    """
     gender_info = {}
 
     for char in characters:
@@ -104,6 +139,13 @@ def analyze_gender_survival_rates(characters: List[Character]) -> Dict[str, Dict
 
 
 def analyze_species_survival_rates(characters: List[Character]) -> Dict[str, Dict[str, SurvivalRate]]:
+    """
+    Analyzes the survival rate of characters based on their species.
+    Args:
+        characters (List[Character]): List of character objects.
+    Returns:
+        Dict[str, SurvivalRate]: Dictionary with species as keys and survival rates as values.
+    """
     species_info = {}
 
     for char in characters:
@@ -128,18 +170,28 @@ def analyze_species_survival_rates(characters: List[Character]) -> Dict[str, Dic
 
 
 def analyze_episode_relationships(episodes: List[Episode]) -> List[Dict[str, Any]]:
-    """Analyzes episode character appearances and identifies atypical relationships."""
+    """
+    Analyzes the relationships between characters in episodes to identify atypical pairings.
+    Args:
+        episodes (List[Episode]): List of episode objects.
+    Returns:
+        List[Dict[str, Any]]: List of episodes with information on novel pairings.
+    """
     all_pairings = Counter()
 
     for episode in episodes:
         character_ids = {url.split('/')[-1] for url in episode["characters"]}
         all_pairings.update(combinations(character_ids, 2))
 
+    # Determine a threshold by the median of the pairs pairing values.
     median_frequency = np.median(list(all_pairings.values()))
+
     atypical_episodes = []
 
     for episode in episodes:
         character_ids = {url.split('/')[-1] for url in episode["characters"]}
+
+        # Get all the pairings that are untrivial because they are lower than the threshold (median_frequency)
         novel_pairings = sum(1 for pair in combinations(
             character_ids, 2) if all_pairings[pair] <= median_frequency)
 
@@ -154,6 +206,13 @@ def analyze_episode_relationships(episodes: List[Episode]) -> List[Dict[str, Any
 
 
 async def analyze_origin_inconsistencies(characters: List[Character]) -> List[Dict[str, Any]]:
+    """
+    Identifies characters with inconsistencies between their origin and current location.
+    Args:
+        characters (List[Character]): List of character objects.
+    Returns:
+        List[Dict[str, Any]]: List of characters with inconsistencies in their origin and location.
+    """
     inconsistencies = []
     for character in characters:
         origin_id = character["origin"]["url"].split(

@@ -10,6 +10,13 @@ router = APIRouter()
 
 @router.get("/resident_counts",  response_model=List[Dict[str, Union[str, int]]])
 async def get_locations_with_resident_counts(request: Request):
+    """
+    Retrieves the number of residents for each location.
+    Args:
+        request (Request): The request object.
+    Returns:
+        List[Dict[str, Union[str, int]]]: A list of dictionaries containing location names and resident counts.
+    """
     query_string = unquote(str(request.query_params)).split(']')[0] + ']'
     location_ids_str = query_string.strip("[]")
     location_ids = [int(id_str)
@@ -32,6 +39,11 @@ async def get_locations_with_resident_counts(request: Request):
 
 @router.get("/analysis/location_survival_rates", response_model=dict[str, SurvivalRate])
 async def location_survival_rate():
+    """
+    Analyzes the survival rates of characters based on their location.
+    Returns:
+        dict[str, SurvivalRate]: A dictionary containing locations and their survival rates.
+    """
     characters = await fetch_all_data("character")
     survival_rates = analyze_location_survival_rate(characters)
     return survival_rates
