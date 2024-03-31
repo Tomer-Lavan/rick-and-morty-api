@@ -51,11 +51,11 @@ The API is structured using the FastAPI framework. It consists of several compon
 - Tests: The folder tests contain all endpoints testing using pytest.
 
 ## Usage Explanation
-The project is attached with a postman collection. To use the API, you need to follow these steps:
+The project is attached with a postman collection that can be downloaded from the postman folder. To use the API, you need to follow these steps:
 
 - Authentication: Obtain an access token by sending a POST request to the /auth/login endpoint with your username and password. Use this token in the Authorization header for subsequent requests.
 
-- Fetching Data: Access the desired endpoint by sending a GET request with any required query parameters. For example, to fetch characters with the status "Alive", you would send a GET request to /characters?status=Alive.
+- Fetching Data: Access the desired endpoint by sending a GET request with any required query parameters. Add the token Authorization header Bearer token. For example, to fetch characters with the status "Alive", you would send a GET request to /characters?status=Alive.
 
 - Filtering and Pagination: Use query parameters to filter results and paginate through them. For example, to get the second page of episodes, you would send a GET request to /characters?page=2.
 
@@ -79,3 +79,4 @@ pytest tests/
 - Optimise Performence: In some endpoints that are getting top k of a metric we can use a heap to make the function more efficient.
                         Due to the nature of the api data is limited I decided that currently it is unnecessary.
 - Improve Testing: Currently most of the testing are straight forward and do not cover all cases.
+- Improve Auth: Change auth to be cookie based and improve to be by a real DB.
