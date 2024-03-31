@@ -50,14 +50,6 @@
 					"response": []
 				},
 				{
-					"name": "Atypical Episodess",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
 					"name": "Character Appearances",
 					"request": {
 						"method": "GET",
@@ -91,6 +83,36 @@
 					"request": {
 						"method": "GET",
 						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Atypical Episodess",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0b21lciIsImV4cCI6MTcxMTg5MTIxMH0.KdQ0JNvcmK8NAzTFEE1Fh0J4XDVNQWUikNwZCnnnGVY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/episodes/atypical_episodes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"episodes",
+								"atypical_episodes"
+							]
+						}
 					},
 					"response": []
 				}

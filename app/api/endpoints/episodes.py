@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Query, HTTPException, status
-from app.services import fetch_all_data
+from app.services import fetch_all_data, analyze_episode_relationships
 from app.models import Episode
 
 router = APIRouter()
@@ -28,3 +28,20 @@ async def get_episodes_with_most_characters(
     episodes_with_count.sort(key=lambda x: x["count"], reverse=True)
     top_episodes = [item["episode"] for item in episodes_with_count[:k]]
     return top_episodes
+
+
+@router.get("/atypical_episodes")
+async def get_atypical_episodes():
+    """
+    Analyzes the relationships between characters in episodes. By this relationships return atypical episodes that
+    are defined by unusual characters pairings.
+    Returns:
+        list: List of episodes with character relationships.
+    """
+    episodes = await fetch_all_data("episode")
+    if not episodes:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail="No episodes found"
+        )
+    relationships = analyze_episode_relationships(episodes)
+    return relationships

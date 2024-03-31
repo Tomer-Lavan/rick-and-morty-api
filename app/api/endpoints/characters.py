@@ -76,23 +76,6 @@ async def get_origin_inconsistencies():
     return inconsistencies
 
 
-@router.get("/atypical_episodess")
-async def get_atypical_episodes():
-    """
-    Analyzes the relationships between characters in episodes. By this relationships return atypical episodes that
-    are defined by unusual characters pairings.
-    Returns:
-        list: List of episodes with character relationships.
-    """
-    episodes = await fetch_all_data("episode")
-    if not episodes:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail="No episodes found"
-        )
-    relationships = analyze_episode_relationships(episodes)
-    return relationships
-
-
 @router.get("/analysis/character_appearances")
 async def character_appearances():
     """

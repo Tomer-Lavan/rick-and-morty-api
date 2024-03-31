@@ -45,3 +45,10 @@ def test_get_episodes_with_most_characters_custom_k(auth_header):
         assert isinstance(item["episode"], str)
         assert "characters" in item
         assert isinstance(item["characters"], list)
+
+
+def test_get_atypical_episodes(auth_header):
+    response = client.get(
+        "/episodes/atypical_episodes", headers=auth_header)
+    assert response.status_code == 200
+    assert isinstance(response.json(), list)

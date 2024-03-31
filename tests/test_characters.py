@@ -42,13 +42,6 @@ def test_get_origin_inconsistencies(auth_header):
     assert isinstance(response.json(), list)
 
 
-def test_get_atypical_episodes(auth_header):
-    response = client.get(
-        "/characters/atypical_episodes", headers=auth_header)
-    assert response.status_code == 200
-    assert isinstance(response.json(), list)
-
-
 def test_character_appearances(auth_header):
     response = client.get(
         "/characters/analysis/character_appearances", headers=auth_header)
